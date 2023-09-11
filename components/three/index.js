@@ -18,7 +18,7 @@ export const Three = ({ data }) => {
 
   useEffect(() => {
     const dom = document.querySelector('.three')
-    if (!WebGL.isWebGLAvailable()) {
+    if (WebGL.isWebGLAvailable()) {
       dom.appendChild(renderer.domElement);
       animate();
     } else {
