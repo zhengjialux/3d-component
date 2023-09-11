@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import * as THREE from 'three';
+import WebGL from 'three/addons/capabilities/WebGL.js';
 
 // 基础柱状图
 export const Three = ({ data }) => {
@@ -17,8 +18,13 @@ export const Three = ({ data }) => {
 
   useEffect(() => {
     const dom = document.querySelector('.three')
-    dom.appendChild(renderer.domElement);
-    animate();
+    if (!WebGL.isWebGLAvailable()) {
+      dom.appendChild(renderer.domElement);
+      animate();
+    } else {
+      const warning = WebGL.getWebGLErrorMessage();
+      dom.appendChild(warning);
+    }
   }, [])
 
   const animate = () => {
