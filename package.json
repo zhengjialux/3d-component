@@ -1,0 +1,49 @@
+{
+  "name": "3d-component",
+  "version": "1.0.0",
+  "description": "数据孪生3D组件",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "watch": "webpack --watch"
+  },
+  "keywords": [
+    "3d-component",
+    "3d",
+    "webgl",
+    "three"
+  ],
+  "author": "zhengjialux",
+  "license": "ISC",
+  "homepage": "https://github.com/zhengjialux/3d-component",
+  "devDependencies": {
+    "@babel/cli": "^7.22.9",
+    "@babel/core": "^7.22.9",
+    "@babel/preset-env": "^7.22.9",
+    "@babel/preset-react": "^7.22.5",
+    "babel-loader": "^9.1.3",
+    "css-loader": "^6.8.1",
+    "csv-loader": "^3.0.5",
+    "html-webpack-plugin": "^5.5.3",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.3",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "webpack-merge": "^5.9.0",
+    "xml-loader": "^1.2.1"
+  },
+  "dependencies": {
+    "@zhengjialux/tool-box": "^1.0.2",
+    "@zhengjialux/ui-component": "^1.0.2",
+    "antd": "^5.8.2",
+    "d3": "^7.8.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.2",
+    "three": "^0.156.1"
+  }
+}
