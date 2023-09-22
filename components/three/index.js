@@ -3,10 +3,9 @@ import * as THREE from 'three';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 
 // 基础柱状图
-export const Three = ({ sceneExtend, camera }) => {
+export const Three = ({ fov = 75, near = 0.1 }) => {
   const _scene = new THREE.Scene();
-  sceneExtend && sceneExtend(_scene)
-  const _camera = camera || new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  const _camera = new THREE.PerspectiveCamera(fov, window.innerWidth / window.innerHeight, near, 1000);
   const renderer = new THREE.WebGLRenderer();
   renderer.setSize(1000, 500);
 
