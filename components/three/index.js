@@ -3,11 +3,19 @@ import * as THREE from 'three';
 import WebGL from 'three/addons/capabilities/WebGL.js';
 
 // 基础柱状图
-export const Three = ({ fov = 75, near = 0.1 }) => {
+export const Three = ({ 
+  fov = 75, 
+  aspect = 2, 
+  near = 0.1, 
+  far = 1000, 
+  runAnimate = true,
+  boxWidth: 1000,
+  boxHeight: 500
+}) => {
   const _scene = new THREE.Scene();
-  const _camera = new THREE.PerspectiveCamera(fov, window.innerWidth / window.innerHeight, near, 1000);
+  const _camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   const renderer = new THREE.WebGLRenderer();
-  renderer.setSize(1000, 500);
+  renderer.setSize(boxWidth, boxHeight);
 
   const geometry = new THREE.BoxGeometry(1, 1, 1);
   const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
@@ -20,7 +28,9 @@ export const Three = ({ fov = 75, near = 0.1 }) => {
     const dom = document.querySelector('.three')
     if (WebGL.isWebGLAvailable()) {
       dom.appendChild(renderer.domElement);
-      animate();
+      if (runAnimate) {
+        animate(); 
+      }
     } else {
       const warning = WebGL.getWebGLErrorMessage();
       dom.appendChild(warning);
