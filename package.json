@@ -1,6 +1,6 @@
 {
   "name": "3d-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "数据孪生3D组件",
   "main": "index.js",
   "scripts": {
